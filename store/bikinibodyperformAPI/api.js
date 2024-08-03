@@ -145,6 +145,30 @@ function modules_appointment_service_appointment_synced_list_retrieve(payload) {
     `/modules/appointment/service/appointment/synced/list/`
   )
 }
+function modules_articles_article_list(payload) {
+  return bikinibodyperformAPI.get(`/modules/articles/article/`)
+}
+function modules_articles_article_create(payload) {
+  return bikinibodyperformAPI.post(`/modules/articles/article/`, payload)
+}
+function modules_articles_article_retrieve(payload) {
+  return bikinibodyperformAPI.get(`/modules/articles/article/${payload.id}/`)
+}
+function modules_articles_article_update(payload) {
+  return bikinibodyperformAPI.put(
+    `/modules/articles/article/${payload.id}/`,
+    payload
+  )
+}
+function modules_articles_article_partial_update(payload) {
+  return bikinibodyperformAPI.patch(
+    `/modules/articles/article/${payload.id}/`,
+    payload
+  )
+}
+function modules_articles_article_destroy(payload) {
+  return bikinibodyperformAPI.delete(`/modules/articles/article/${payload.id}/`)
+}
 function rest_auth_login_create(payload) {
   return bikinibodyperformAPI.post(`/rest-auth/login/`, payload)
 }
@@ -215,6 +239,12 @@ export const apiService = {
   modules_appointment_service_appointment_list_retrieve,
   modules_appointment_service_appointment_sync_create,
   modules_appointment_service_appointment_synced_list_retrieve,
+  modules_articles_article_list,
+  modules_articles_article_create,
+  modules_articles_article_retrieve,
+  modules_articles_article_update,
+  modules_articles_article_partial_update,
+  modules_articles_article_destroy,
   rest_auth_login_create,
   rest_auth_logout_create,
   rest_auth_password_change_create,
